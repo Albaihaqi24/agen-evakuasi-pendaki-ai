@@ -1,0 +1,270 @@
+{
+  "scenario": "hujan",
+  "start": "S",
+  "goal": "G",
+  "edges": [
+    {
+      "u": "S",
+      "v": "A",
+      "distance": 3,
+      "terrain": 1,
+      "penalty": 0,
+      "cost": 4,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat"
+      ],
+      "trace": []
+    },
+    {
+      "u": "A",
+      "v": "B",
+      "distance": 4,
+      "terrain": 1,
+      "penalty": 0,
+      "cost": 5,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat"
+      ],
+      "trace": []
+    },
+    {
+      "u": "B",
+      "v": "G",
+      "distance": 4,
+      "terrain": 0,
+      "penalty": 0,
+      "cost": 4,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat"
+      ],
+      "trace": []
+    },
+    {
+      "u": "S",
+      "v": "E",
+      "distance": 1.5,
+      "terrain": 0.5,
+      "penalty": 0,
+      "cost": 2.0,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat"
+      ],
+      "trace": []
+    },
+    {
+      "u": "E",
+      "v": "F",
+      "distance": 1.5,
+      "terrain": 0.5,
+      "penalty": 0,
+      "cost": 2.0,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat"
+      ],
+      "trace": []
+    },
+    {
+      "u": "F",
+      "v": "H",
+      "distance": 1.5,
+      "terrain": 0.5,
+      "penalty": 0,
+      "cost": 2.0,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat"
+      ],
+      "trace": []
+    },
+    {
+      "u": "H",
+      "v": "G",
+      "distance": 1.5,
+      "terrain": 0.5,
+      "penalty": 0,
+      "cost": 2.0,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat"
+      ],
+      "trace": []
+    },
+    {
+      "u": "S",
+      "v": "C",
+      "distance": 1,
+      "terrain": 0,
+      "penalty": 0,
+      "cost": 1,
+      "blocked": true,
+      "facts": [
+        "JALUR_DITUTUP",
+        "hujan_lebat",
+        "medan_curam",
+        "risiko_longsor"
+      ],
+      "trace": [
+        "R1: hujan_lebat AND medan_curam → risiko_longsor",
+        "R4: risiko_longsor → JALUR_DITUTUP"
+      ]
+    },
+    {
+      "u": "C",
+      "v": "D",
+      "distance": 1,
+      "terrain": 0,
+      "penalty": 0,
+      "cost": 1,
+      "blocked": true,
+      "facts": [
+        "JALUR_DITUTUP",
+        "hujan_lebat",
+        "jalur_sungai",
+        "risiko_banjir_bandang"
+      ],
+      "trace": [
+        "R2: hujan_lebat AND jalur_sungai → risiko_banjir_bandang",
+        "R4: risiko_banjir_bandang → JALUR_DITUTUP"
+      ]
+    },
+    {
+      "u": "D",
+      "v": "G",
+      "distance": 1,
+      "terrain": 0,
+      "penalty": 0,
+      "cost": 1,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat"
+      ],
+      "trace": []
+    },
+    {
+      "u": "C",
+      "v": "F",
+      "distance": 2,
+      "terrain": 1,
+      "penalty": 0,
+      "cost": 3,
+      "blocked": false,
+      "facts": [
+        "hujan_lebat",
+        "tepi_jurang"
+      ],
+      "trace": []
+    }
+  ],
+  "astar": {
+    "found": true,
+    "path": [
+      "S",
+      "E",
+      "F",
+      "H",
+      "G"
+    ],
+    "cost": 8.0,
+    "steps": 4,
+    "expanded": 7,
+    "trace": [
+      {
+        "node": "S",
+        "g": 0,
+        "h": 0.56,
+        "f": 0.56
+      },
+      {
+        "node": "E",
+        "g": 2.0,
+        "h": 0.49739320461783554,
+        "f": 2.4973932046178353
+      },
+      {
+        "node": "F",
+        "g": 4.0,
+        "h": 0.40782962128810607,
+        "f": 4.407829621288106
+      },
+      {
+        "node": "A",
+        "g": 4,
+        "h": 0.47762432936356997,
+        "f": 4.47762432936357
+      },
+      {
+        "node": "H",
+        "g": 6.0,
+        "h": 0.2528339375954106,
+        "f": 6.252833937595411
+      },
+      {
+        "node": "C",
+        "g": 7.0,
+        "h": 0.395,
+        "f": 7.395
+      },
+      {
+        "node": "G",
+        "g": 8.0,
+        "h": 0.0,
+        "f": 8.0
+      }
+    ]
+  },
+  "bfs": {
+    "found": true,
+    "path": [
+      "S",
+      "A",
+      "B",
+      "G"
+    ],
+    "cost": 13,
+    "steps": 3,
+    "expanded": 6,
+    "trace": [
+      {
+        "node": "S",
+        "g": 0,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "A",
+        "g": 4,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "E",
+        "g": 2.0,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "B",
+        "g": 9,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "F",
+        "g": 4.0,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "G",
+        "g": 13,
+        "h": null,
+        "f": null
+      }
+    ]
+  }
+}

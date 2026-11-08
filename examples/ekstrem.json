@@ -1,0 +1,310 @@
+{
+  "scenario": "ekstrem",
+  "start": "S",
+  "goal": "G",
+  "edges": [
+    {
+      "u": "S",
+      "v": "A",
+      "distance": 3,
+      "terrain": 1,
+      "penalty": 1.0,
+      "cost": 5.0,
+      "blocked": false,
+      "facts": [
+        "PENALTI_KECEPATAN",
+        "hujan_lebat",
+        "kabut_tebal"
+      ],
+      "trace": [
+        "R5: kabut_tebal AND NOT JALUR_DITUTUP → penalti +1"
+      ]
+    },
+    {
+      "u": "A",
+      "v": "B",
+      "distance": 4,
+      "terrain": 1,
+      "penalty": 1.0,
+      "cost": 6.0,
+      "blocked": false,
+      "facts": [
+        "PENALTI_KECEPATAN",
+        "hujan_lebat",
+        "kabut_tebal"
+      ],
+      "trace": [
+        "R5: kabut_tebal AND NOT JALUR_DITUTUP → penalti +1"
+      ]
+    },
+    {
+      "u": "B",
+      "v": "G",
+      "distance": 4,
+      "terrain": 0,
+      "penalty": 1.0,
+      "cost": 5.0,
+      "blocked": false,
+      "facts": [
+        "PENALTI_KECEPATAN",
+        "hujan_lebat",
+        "kabut_tebal"
+      ],
+      "trace": [
+        "R5: kabut_tebal AND NOT JALUR_DITUTUP → penalti +1"
+      ]
+    },
+    {
+      "u": "S",
+      "v": "E",
+      "distance": 1.5,
+      "terrain": 0.5,
+      "penalty": 1.0,
+      "cost": 3.0,
+      "blocked": false,
+      "facts": [
+        "PENALTI_KECEPATAN",
+        "hujan_lebat",
+        "kabut_tebal"
+      ],
+      "trace": [
+        "R5: kabut_tebal AND NOT JALUR_DITUTUP → penalti +1"
+      ]
+    },
+    {
+      "u": "E",
+      "v": "F",
+      "distance": 1.5,
+      "terrain": 0.5,
+      "penalty": 1.0,
+      "cost": 3.0,
+      "blocked": false,
+      "facts": [
+        "PENALTI_KECEPATAN",
+        "hujan_lebat",
+        "kabut_tebal"
+      ],
+      "trace": [
+        "R5: kabut_tebal AND NOT JALUR_DITUTUP → penalti +1"
+      ]
+    },
+    {
+      "u": "F",
+      "v": "H",
+      "distance": 1.5,
+      "terrain": 0.5,
+      "penalty": 1.0,
+      "cost": 3.0,
+      "blocked": false,
+      "facts": [
+        "PENALTI_KECEPATAN",
+        "hujan_lebat",
+        "kabut_tebal"
+      ],
+      "trace": [
+        "R5: kabut_tebal AND NOT JALUR_DITUTUP → penalti +1"
+      ]
+    },
+    {
+      "u": "H",
+      "v": "G",
+      "distance": 1.5,
+      "terrain": 0.5,
+      "penalty": 1.0,
+      "cost": 3.0,
+      "blocked": false,
+      "facts": [
+        "PENALTI_KECEPATAN",
+        "hujan_lebat",
+        "kabut_tebal"
+      ],
+      "trace": [
+        "R5: kabut_tebal AND NOT JALUR_DITUTUP → penalti +1"
+      ]
+    },
+    {
+      "u": "S",
+      "v": "C",
+      "distance": 1,
+      "terrain": 0,
+      "penalty": 0,
+      "cost": 1,
+      "blocked": true,
+      "facts": [
+        "JALUR_DITUTUP",
+        "hujan_lebat",
+        "kabut_tebal",
+        "medan_curam",
+        "risiko_longsor"
+      ],
+      "trace": [
+        "R1: hujan_lebat AND medan_curam → risiko_longsor",
+        "R4: risiko_longsor → JALUR_DITUTUP"
+      ]
+    },
+    {
+      "u": "C",
+      "v": "D",
+      "distance": 1,
+      "terrain": 0,
+      "penalty": 0,
+      "cost": 1,
+      "blocked": true,
+      "facts": [
+        "JALUR_DITUTUP",
+        "hujan_lebat",
+        "jalur_sungai",
+        "kabut_tebal",
+        "risiko_banjir_bandang"
+      ],
+      "trace": [
+        "R2: hujan_lebat AND jalur_sungai → risiko_banjir_bandang",
+        "R4: risiko_banjir_bandang → JALUR_DITUTUP"
+      ]
+    },
+    {
+      "u": "D",
+      "v": "G",
+      "distance": 1,
+      "terrain": 0,
+      "penalty": 1.0,
+      "cost": 2.0,
+      "blocked": false,
+      "facts": [
+        "PENALTI_KECEPATAN",
+        "hujan_lebat",
+        "kabut_tebal"
+      ],
+      "trace": [
+        "R5: kabut_tebal AND NOT JALUR_DITUTUP → penalti +1"
+      ]
+    },
+    {
+      "u": "C",
+      "v": "F",
+      "distance": 2,
+      "terrain": 1,
+      "penalty": 0,
+      "cost": 3,
+      "blocked": true,
+      "facts": [
+        "JALUR_DITUTUP",
+        "hujan_lebat",
+        "kabut_tebal",
+        "risiko_tersesat_jatuh",
+        "tepi_jurang"
+      ],
+      "trace": [
+        "R3: kabut_tebal AND tepi_jurang → risiko_tersesat_jatuh",
+        "R4: risiko_tersesat_jatuh → JALUR_DITUTUP"
+      ]
+    }
+  ],
+  "astar": {
+    "found": true,
+    "path": [
+      "S",
+      "E",
+      "F",
+      "H",
+      "G"
+    ],
+    "cost": 12.0,
+    "steps": 4,
+    "expanded": 7,
+    "trace": [
+      {
+        "node": "S",
+        "g": 0,
+        "h": 0.56,
+        "f": 0.56
+      },
+      {
+        "node": "E",
+        "g": 3.0,
+        "h": 0.49739320461783554,
+        "f": 3.4973932046178353
+      },
+      {
+        "node": "A",
+        "g": 5.0,
+        "h": 0.47762432936356997,
+        "f": 5.47762432936357
+      },
+      {
+        "node": "F",
+        "g": 6.0,
+        "h": 0.40782962128810607,
+        "f": 6.407829621288106
+      },
+      {
+        "node": "H",
+        "g": 9.0,
+        "h": 0.2528339375954106,
+        "f": 9.25283393759541
+      },
+      {
+        "node": "B",
+        "g": 11.0,
+        "h": 0.35640566774393473,
+        "f": 11.356405667743935
+      },
+      {
+        "node": "G",
+        "g": 12.0,
+        "h": 0.0,
+        "f": 12.0
+      }
+    ]
+  },
+  "bfs": {
+    "found": true,
+    "path": [
+      "S",
+      "A",
+      "B",
+      "G"
+    ],
+    "cost": 16.0,
+    "steps": 3,
+    "expanded": 6,
+    "trace": [
+      {
+        "node": "S",
+        "g": 0,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "A",
+        "g": 5.0,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "E",
+        "g": 3.0,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "B",
+        "g": 11.0,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "F",
+        "g": 6.0,
+        "h": null,
+        "f": null
+      },
+      {
+        "node": "G",
+        "g": 16.0,
+        "h": null,
+        "f": null
+      }
+    ]
+  }
+}

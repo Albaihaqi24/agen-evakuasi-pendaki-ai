@@ -1,0 +1,13 @@
+test_all_pairs_against_floyd_warshall (test_agent.AgentTests.test_all_pairs_against_floyd_warshall) ... ok
+test_fog_negation_stratified (test_agent.AgentTests.test_fog_negation_stratified) ... ok
+test_heuristic_scale (test_agent.AgentTests.test_heuristic_scale) ... ok
+test_invalid_node (test_agent.AgentTests.test_invalid_node) ... ok
+test_isolated_start_and_identity (test_agent.AgentTests.test_isolated_start_and_identity) ... ok
+test_tc01_rain_closes_steep_and_river (test_agent.AgentTests.test_tc01_rain_closes_steep_and_river) ... ok
+test_tc02_clear (test_agent.AgentTests.test_tc02_clear) ... ok
+test_tc03_extreme (test_agent.AgentTests.test_tc03_extreme) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.014s
+
+OK
